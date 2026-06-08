@@ -105,7 +105,7 @@ async function updateForeCastsInfo(city){
 }
 function updateForeCastsItems(weatherData){
     const {
-        dt_txt: data,
+        dt_txt: date,
         weather: [{ id }],
         main: { temp }
     } = weatherData;
