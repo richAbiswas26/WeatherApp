@@ -1,104 +1,164 @@
 *{
-    margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    margin: 0;
     box-sizing: border-box;
+    color: white;
+    font-weight: 600;
 }
+
+button,input{
+    border: none;
+    background: transparent;
+}
+
+
 body{
-    background-color: black;
-}
-
-.card{
-    width: 90%;
-    max-width: 450px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 50px;
-    text-align: center;
-}
-
-.search{
+    background-image: url(assets/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     width: 100%;
+    margin: 0;
+    backdrop-filter: blur(15px);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+.regular-txt{
+    font-weight: 400;
 }
 
-.search input{
-    text-decoration: none;
-    height: 60px;
-    /* width: 90%; */
-    background: #ebfffc;
-    color: #555;
-    border: 0;
-    outline: 0;
-    padding: 10px 25px;
-    border-radius: 30px;
-    margin-right: 16px;
-    font-size: 18px;
-    flex: 1;
+.main-container{
+    width: 420px;
+    height: 600px;
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.15),
+                                rgb(255, 255, 255, 0.15));
+    z-index: 1;
+    border-radius: 12px;
+    backdrop-filter: blur(100px);
+    padding: 20px;
 }
 
-.search button{
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+.input-container{
+    position: relative;
+    margin-bottom: 25px;
+}
+.city-input{
+    width: 100%;
+    /* height: 100%; */
+    padding: 10px 16px;
+    border-radius: 99px;
+    border: 3px solid transparent;
+    background: rgb(0, 0, 0, 0.15);
+    outline: none;
+    font-weight: 500;
+    transition: 0.25s border;
+    padding-right: 45px;
+}
+.city-input:focus{
+    border:3px solid rgb(0, 0, 0, 0.15);
+}
+.city-input::placeholder{
+    color: rgb(255, 255, 255, 0.75);
+}
+#search-btn{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    display: flex;
+    border: none;
     cursor: pointer;
 }
 
-.weather-icon{
-    width: 170px;
-    margin-top: 30px;
-}
-
-/* .weather h1{
-    font-size: 50px;
-    font-weight: 400;
-} */
-
-/* .weather h2{
-    font-size: 45px;
-    font-weight: 500;
-    margin-top: -10px;
-} */
-
-.details{
+.weather-info{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.location-date-container{
+    display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    align-items: center;
 }
-
-.col{
+.location{
     display: flex;
     align-items: center;
-    text-align: left;
+    gap: 6px;
+}
+.weather-summary-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weather-summary-img{
+    height: 120px;
+    width: 120px;
+}
+.weather-summary-info{
+    text-align: end;
 }
 
-.col img{
-    width: 40px;
-    margin-right: 15px;
+.weather-conditions-container{
+    display: flex;
+    justify-content: space-between;
+}
+.condition-item{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.condition-item span{
+    font-size: 30px;
 }
 
-.humidity, .wind{
-    margin-top: -6px;
-    font-size: 28px;
+.forecast-items-container{
+    display: flex;
+    gap: 15px;
+    overflow: scroll;
+    padding-bottom: 12px;
+}
+.forecast-items-container::-webkit-scrollbar{
+    height: 8px;
+}
+.forecast-items-container::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+.forecast-items-container::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+}
+.forecast-item{
+    min-height: 80px;
+    background: rgb(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.3s background;
+}
+.forecast-item:hover{
+    background: rgb(255, 255, 255, 0.15);
+}
+.forecast-item-img{
+    width: 80px;
+    height: 80px;
 }
 
-.weather{
-    display: none;
+.section-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
 }
-
-.error{
-    text-align: left;
-    margin-left: 15px;
-    margin-top: 5px;
-    font-size: 20px;
-    display: none;
+.section-message img{
+    height: 180px;
+    width: fit-content;
 }
